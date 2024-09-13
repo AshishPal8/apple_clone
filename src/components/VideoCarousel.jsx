@@ -90,10 +90,12 @@ const VideoCarousel = () => {
       }
 
       const animUpdate = () => {
-        anim.progress(
-          videoRef.current[videoId].currentTime /
-            highlightsSlides[videoId].videoDuration
-        );
+        if (videoRef.current[videoId]) {
+          anim.progress(
+            videoRef.current[videoId].currentTime /
+              highlightsSlides[videoId].videoDuration
+          );
+        }
       };
 
       if (isPlaying) {

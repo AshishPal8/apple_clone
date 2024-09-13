@@ -1,22 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Highlights from "./components/Highlights";
-import Model from "./components/Model";
-import Features from "./components/Features";
-import HowItWorks from "./components/HowItWorks";
+import Mac from "./pages/Mac";
 import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <main className="bg-black">
+    <BrowserRouter className="bg-black">
       <Navbar />
-      <Hero />
-      <Highlights />
-      <Model />
-      <Features />
-      <HowItWorks />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mac" element={<Mac />} />
+      </Routes>
       <Footer />
-    </main>
+    </BrowserRouter>
   );
 };
 
